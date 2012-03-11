@@ -1,0 +1,19 @@
+#!/bin/bash
+
+action=$1
+shift
+
+function usage {
+  echo "  Customized daily:"
+  echo "    daily "
+  echo "      finds all @daily items and prioritizes them A"
+  echo ""
+  exit
+}
+
+[ "$action" = "usage" ] && usage
+
+for line in `grep -n @daily "$TODO_FILE" | awk -F: '{print $1}'` ; do
+    $DO && "$TODO_SH" command p "$line" A
+done
+
