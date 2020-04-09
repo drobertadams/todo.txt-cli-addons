@@ -54,6 +54,6 @@ if [[ "$DAYS" != "" ]]; then
 fi
 
 if [[ "$LINE" != "" ]] ; then
-    $DO && "$TODO_SH" command do "$ITEM"
-    $DO && "$TODO_SH" command add "$LINE"
+    $DO && "$TODO_FULL_SH" command do "$ITEM" 
+    $DO && "$TODO_FULL_SH" command add "$LINE" 
 fi
